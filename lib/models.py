@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey, Column, Integer, String, desc, func
+from sqlalchemy import Integer, String, ForeignKey, Column, desc, func
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.associationproxy import association_proxy
@@ -15,7 +15,7 @@ class Restaurant(Base):
     __tablename__ = 'restaurants'
     
     id = Column(Integer(), primary_key=True)
-    name = Column(String(), index=True)
+    name = Column(String())
     price = Column(Integer())
     # reviews = relationships('Review', back_populates='restaurant')
     #
